@@ -126,7 +126,7 @@ const commonConfig = {
 };
 
 const devConfig = {
-  devtool: 'eval-source-map',
+  devtool: 'source-map',
   module: {
     rules: [
       {
@@ -185,7 +185,7 @@ const prodConfig = {
       },
 
       {
-        test: /\.((html)|(js))$/,
+        test: /\.js$/,
         enforce: 'pre',
         exclude: /(node_modules|bower_components|\.spec\.js)/,
         use: [

@@ -1,0 +1,43 @@
+// Overall site header. Navigation + Banner
+.site-header
+  // background-color #2D3942
+  text-transform uppercase
+  align-items center
+
+// TODO: Banner for header
+// .header-banner
+
+
+
+// Navigation area
+.header-nav
+  background-color #2D3942
+  display flex
+
+  ul
+    display flex
+    flex 0 0 50%
+  
+  li
+    margin-left auto
+    font-weight bolder
+    
+
+  a
+    display block
+    color white
+    letter-spacing 2px
+    font-size 0.8rem
+
+.brand
+  color white
+  display block
+
+.brand, .header-nav a
+  padding 0.9rem
+
+@media all and (min-width 1024px)
+  .header-nav
+    ul
+      margin-left auto
+    

@@ -8,12 +8,14 @@
   "license": "MIT",
   "scripts": {
     "start": "NODE_ENV=development nodemon --watch webpack.config.js --exec 'rm -rf dist && webpack-dev-server'",
-    "build": "NODE_ENV=production rm -rf dist && webpack -p"
+    "build": "NODE_ENV=production rm -rf dist && webpack -p",
+    "build-cleanly": "NODE_ENV=production rm -rf dist && webpack -p && rm -rf dist/*.js*"
   },
   "devDependencies": {
     "autoprefixer-stylus": "^0.14.0",
     "babel-core": "^6.25.0",
     "babel-loader": "^7.1.1",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
     "babel-preset-env": "^1.6.0",
     "css-loader": "^0.28.4",
     "extract-loader": "^0.1.0",
@@ -24,6 +26,7 @@
     "html-webpack-plugin": "^2.29.0",
     "image-webpack-loader": "^3.3.1",
     "nodemon": "^1.11.0",
+    "style-loader": "^0.18.2",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.1",
     "webpack": "^3.3.0",
@@ -31,5 +34,7 @@
     "webpack-merge": "^4.1.0",
     "webpack-strip-block": "^0.2.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "reset-css": "^2.2.1"
+  }
 }
