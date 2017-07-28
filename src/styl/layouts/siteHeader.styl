@@ -1,3 +1,5 @@
+navColor = #2D3942
+
 // Overall site header. Navigation + Banner
 .site-header
   // background-color #2D3942
@@ -11,30 +13,43 @@
 
 // Navigation area
 .header-nav
-  background-color #2D3942
+  background-color navColor
   display flex
+  font-family Helvetica
 
   ul
     display flex
     flex 0 0 50%
   
   li
-    margin-left auto
     font-weight bolder
-    
+
+    &:first
+      margin-left auto    
 
   a
     display block
     color white
     letter-spacing 2px
     font-size 0.8rem
+    // font-family Helvetica
+
+    transition all 0.3s ease
+
+    &.active, &:hover
+      background-color darken(navColor, 20%)
+      border-bottom 2px solid aqua
 
 .brand
   color white
   display block
+  position relative
+  font-size 1rem
+
+
 
 .brand, .header-nav a
-  padding 0.9rem
+  padding 1rem
 
 @media all and (min-width 1024px)
   .header-nav
