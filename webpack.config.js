@@ -13,7 +13,17 @@ const webpack = require('webpack');
 const Merge = require('webpack-merge');
 
 const { join } = require('path');
+// TODO: HTML MINIFICATION
 
+
+
+
+const htmlMinify = process.env.NODE_ENV === 'PRODUCTION' ? {
+        collapseWhitespace: true,
+        removeComments: true,
+        removeOptionalTags: true,
+        removeRedundantAttributes: true
+      } : false; 
 
 const commonConfig = {
   entry: {
@@ -25,11 +35,7 @@ const commonConfig = {
     chunkFilename: '[name].bundle.js'
   },
   resolve: {
-    extensions: ['.js', '.json', '.vue', '.html', '.styl'],
-    alias: {
-      'vue$': 'vue/dist/vue.esm.js',
-      // inherits$: join(__dirname, 'node_modules/inherits')
-    }
+    extensions: ['.js', '.json', '.html', '.styl'],
   },
   node: {
     fs: 'empty',
@@ -46,32 +52,6 @@ const commonConfig = {
         use: ['babel-loader']
       },
 
-
-
-      // {
-      //   test: /\.html$/,
-      //   use: [
-      //     {
-      //       loader: "file-loader",
-      //       options: {
-      //         name: "[name].html",
-      //       },
-      //     },
-
-      //     {
-      //       loader: "extract-loader",
-      //     },
-
-      //     {
-      //       loader: "html-loader",
-      //       options: {
-      //         // attrs: ["img:src", "link:href"],
-      //         // interpolate: true,
-      //       },
-      //     },
-      //   ],
-      // },
-
       {
         test: /\.(gif|png|jpe?g|svg)$/i,
         use: [
@@ -84,12 +64,6 @@ const commonConfig = {
           {
             loader: 'image-webpack-loader',
             query: {
-
-              // progressive: true,
-
-              // optimizationLevel: 12,
-
-              // interlaced: false,
 
               mozjpeg: {
 
@@ -137,7 +111,8 @@ const commonConfig = {
   plugins: [
 
     new HtmlWebpackPlugin({
-      template: 'index.html'
+      template: 'index.html',
+      minify: htmlMinify
     }),
 
     new ExtractTextPlugin('style.css'),

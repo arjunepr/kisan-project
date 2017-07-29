@@ -1,0 +1,35 @@
+footerColor = #28373e
+
+.site-footer
+  background-color footerColor
+  margin-top 2rem
+  
+  text-align center
+  padding 3rem
+
+  h5
+    color #fff
+    font-size 1.25rem
+    font-weight bolder
+    margin-bottom 1rem
+
+  a
+    color #888
+
+.footer-content
+  display flex
+  flex-wrap wrap
+
+.footer-unit
+  flex 1 1 33.33%
+  padding 2rem 0
+  margin-bottom 2rem
+
+@media all and (max-width 1024px)
+  .footer-unit
+    padding 0
+
+
+@media all and (max-width 800px)
+  .footer-unit
+    flex 1 1 100%

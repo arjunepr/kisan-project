@@ -20,16 +20,18 @@ orangeHero = #eab158
   flex-wrap wrap
   font-family Helvetica
   text-align center
+  justify-content space-between
 
   ul
     display flex
-    flex 0 0 50%
+    flex-wrap wrap
+    flex 1 1 100%
   
   li
     font-weight bolder
+    flex 1 1 100%
+    text-align center
 
-    &:first
-      margin-left auto    
 
   a
     display block
@@ -49,8 +51,9 @@ orangeHero = #eab158
   display block
   position relative
   font-size 1rem
-  flex 0 1 0
-  margin-right auto
+  flex 1 1 0
+  // margin 0 auto
+  text-align center
 
 
 
@@ -72,7 +75,6 @@ orangeHero = #eab158
   font-family sans-serif
   // display inline-block
   line-height 1.2
-  flex 0 0 70%
   font-size 1.15rem
   word-spacing 0.2rem
   // display flex
@@ -92,13 +94,41 @@ orangeHero = #eab158
     letter-spacing 1px
     font-size 1.3rem
 
+.header-banner.content
+  padding-top 5rem
+  padding-bottom 5rem
+
+// @media all and (min-width 1024px)
+//   .header-nav ul
+//     margin-left auto
+
+  
+// @media all and (min-width 670px)
+//   .header-nav li:first
+//     margin-left auto
+
+nav.content
+  padding 0 2%
+
+// @media all and (min-width 920px)
+//   .brand
+//     text-align left
+
+@media all and (min-width 720px)
+
+  .orange
+    flex 0 0 70%
+
+  .header-nav ul
+    flex-wrap nowrap
+    flex 0 0 50%
+
+    li
+      flex 0 1 10%
 
 
-@media all and (min-width 1024px)
-  .header-nav
-    ul
-      margin-left auto
 
-  .header-banner.content
-    padding-top 5rem
-    padding-bottom 5rem
+  nav.content
+    padding 0 15%
+
+

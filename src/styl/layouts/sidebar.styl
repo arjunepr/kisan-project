@@ -1,0 +1,33 @@
+thisAqua = #1dd5c9
+
+illuminate()
+  background-color thisAqua
+  color white
+
+.sidebar
+  flex 1 1 20%
+
+  h5
+   font-size 1.4rem
+   font-weight bolder
+   text-align center
+   margin-bottom 1rem
+
+  a
+    color thisAqua
+    display block
+    padding 0.5rem 2rem
+    transition all 0.5s ease
+
+    &:hover
+      illuminate()
+
+  .active
+    illuminate()
+
+
+.sub-menu
+  border 1px solid #999
+  // padding 2rem 0
+  line-height 2
+  border-radius 1%
