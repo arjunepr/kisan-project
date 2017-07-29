@@ -2,8 +2,6 @@ const process = require('process');
 
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
-
 const stylusAutoprefixer = require('autoprefixer-stylus');
 
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
@@ -48,7 +46,7 @@ const commonConfig = {
         use: ['babel-loader']
       },
 
-      
+
 
       // {
       //   test: /\.html$/,
@@ -86,13 +84,40 @@ const commonConfig = {
           {
             loader: 'image-webpack-loader',
             query: {
-              progressive: true,
-              optimizationLevel: 12,
-              interlaced: false,
+
+              // progressive: true,
+
+              // optimizationLevel: 12,
+
+              // interlaced: false,
+
+              mozjpeg: {
+
+                progressive: true,
+
+              },
+
+              gifsicle: {
+
+                interlaced: false,
+
+              },
+
+              optipng: {
+
+                optimizationLevel: 4,
+
+              },
+
               pngquant: {
+
                 quality: '65-70',
-                speed: 4
-              }
+
+                speed: 3,
+
+              },
+
+
             }
           }
         ]
@@ -117,9 +142,6 @@ const commonConfig = {
 
     new ExtractTextPlugin('style.css'),
 
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor'
-    }),
 
     new FriendlyErrorsPlugin()
   ]
@@ -200,16 +222,12 @@ const prodConfig = {
   },
 
   plugins: [
-    //   new UglifyJSPlugin({
-    //   extractComments: true,
-    //   sourceMap: true
-    // })
+
 
     new webpack.LoaderOptionsPlugin({
       test: /\.styl$/,
       stylus: {
-        // You can have multiple stylus configs with other names and use them
-        // with `stylus-loader?config=otherConfig`.
+
         default: {
           use: [stylusAutoprefixer({ browsers: ['last 3 versions'] })],
         },
