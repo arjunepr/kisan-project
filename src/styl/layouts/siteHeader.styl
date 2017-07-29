@@ -1,4 +1,6 @@
 navColor = #2D3942
+bannerColor = #8198a0
+orangeHero = #eab158
 
 // Overall site header. Navigation + Banner
 .site-header
@@ -15,7 +17,9 @@ navColor = #2D3942
 .header-nav
   background-color navColor
   display flex
+  flex-wrap wrap
   font-family Helvetica
+  text-align center
 
   ul
     display flex
@@ -45,14 +49,54 @@ navColor = #2D3942
   display block
   position relative
   font-size 1rem
+  flex 0 1 0
+  margin-right auto
 
 
 
 .brand, .header-nav a
   padding 1rem
 
+.header-banner
+  background-color bannerColor
+  display flex
+  // color #fff
+  // padding 10rem 0
+  // font-family Helvetica
+  // font-size 1.2rem
+  // word-spacing 0.2rem
+
+
+.orange
+  color white
+  font-family sans-serif
+  // display inline-block
+  line-height 1.2
+  flex 0 0 70%
+  font-size 1.15rem
+  word-spacing 0.2rem
+  // display flex
+
+
+
+  span
+    background-color orangeHero
+    // white-space pre-wrap
+    display inline
+    line-height 1.4
+    // box-shadow: 10px 0 0 heroOrange, -10px 0 0 heroOrange;
+    box-shadow: 0.3rem 0 0 orangeHero, -0.3rem 0 0 orangeHero;
+    box-decoration-break: clone;
+    padding 0.3rem 0;
+    text-transform none
+    letter-spacing 1px
+    font-size 1.3rem
+
 @media all and (min-width 1024px)
   .header-nav
     ul
       margin-left auto
-    
+
+  .header-banner.content
+    padding-top 5rem
+    padding-bottom 5rem
