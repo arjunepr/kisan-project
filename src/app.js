@@ -25,3 +25,4 @@ import './images/earth-space.jpg';
 
 // Import JavaScript
 import './js/google-maps.js';
+import './js/basicjs.js';

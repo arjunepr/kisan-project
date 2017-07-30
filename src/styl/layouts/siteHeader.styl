@@ -2,35 +2,36 @@ navColor = #2D3942
 bannerColor = #8198a0
 orangeHero = #eab158
 
-// Overall site header. Navigation + Banner
+
 .site-header
-  // background-color #2D3942
   text-transform uppercase
-  align-items center
-
-// TODO: Banner for header
-// .header-banner
 
 
-
-// Navigation area
 .header-nav
   background-color navColor
   display flex
   flex-wrap wrap
-  font-family Helvetica
+  align-items stretch
   text-align center
   justify-content space-between
+  position fixed
+  top 0
+  right 0
+  left 0
+  z-index 5
 
   ul
     display flex
     flex-wrap wrap
     flex 1 1 100%
-  
+    transition all 1s ease
+    // align-items center
+
   li
     font-weight bolder
     flex 1 1 100%
     text-align center
+    display none
 
 
   a
@@ -38,7 +39,7 @@ orangeHero = #eab158
     color white
     letter-spacing 2px
     font-size 0.8rem
-    // font-family Helvetica
+    height 100%
 
     transition all 0.3s ease
 
@@ -47,46 +48,43 @@ orangeHero = #eab158
       border-bottom 2px solid aqua
 
 .brand
-  color white
+  color black
+  
+  text-stroke 1.8px aqua
+  -webkit-text-stroke 1.8px aqua
+  
   display block
   position relative
-  font-size 1rem
-  flex 1 1 0
-  // margin 0 auto
+  font-size 1.5rem
+  flex 1 1 100%
   text-align center
 
 
 
 .brand, .header-nav a
-  padding 1rem
+  // text-align center
+  padding 1rem 0 0
 
 .header-banner
   background-color bannerColor
   display flex
-  // color #fff
-  // padding 10rem 0
-  // font-family Helvetica
-  // font-size 1.2rem
-  // word-spacing 0.2rem
+  padding 10rem
+
 
 
 .orange
   color white
-  font-family sans-serif
-  // display inline-block
   line-height 1.2
   font-size 1.15rem
   word-spacing 0.2rem
-  // display flex
+  margin 5rem 0 1rem
 
 
 
   span
     background-color orangeHero
-    // white-space pre-wrap
     display inline
     line-height 1.4
-    // box-shadow: 10px 0 0 heroOrange, -10px 0 0 heroOrange;
     box-shadow: 0.3rem 0 0 orangeHero, -0.3rem 0 0 orangeHero;
     box-decoration-break: clone;
     padding 0.3rem 0;
@@ -96,39 +94,74 @@ orangeHero = #eab158
 
 .header-banner.content
   padding-top 5rem
-  padding-bottom 5rem
+  padding-bottom 2rem
 
-// @media all and (min-width 1024px)
-//   .header-nav ul
-//     margin-left auto
 
-  
-// @media all and (min-width 670px)
-//   .header-nav li:first
-//     margin-left auto
 
 nav.content
   padding 0 2%
 
-// @media all and (min-width 920px)
-//   .brand
-//     text-align left
 
-@media all and (min-width 720px)
+.hamburger
+  height 50px
+  background linear-gradient(to bottom, #fff 0%, #fff 20%, transparent 20%, transparent 40%, #fff 40%, #fff 60%, transparent 60%, transparent 80%, #fff 80%, #fff 100%)
+  min-width 80px
+  margin 1rem auto
+  border none
+  display block
+  flex 0 0 5%
+  margin 0.5rem auto 1rem
+  border 0.4rem solid navColor
+  border-radius 0.2rem
+  box-shadow 0px 0px 0px 1px #aaa
+
+.reveal
+  transition all 1s ease
+
+.content .reveal
+  display flex
+  flex 1 1 100%
+  max-height 200rem
+  flex-wrap wrap
+
+  li
+    display block
+    max-height 200rem
+
+
+
+@media all and (min-width 900px)
+
+  .brand
+    flex 0 0 0
+    text-align left
 
   .orange
     flex 0 0 70%
+    margin 3rem 0
 
-  .header-nav ul
+  .header-nav.content
+    display flex
     flex-wrap nowrap
-    flex 0 0 50%
 
+    ul
+      display flex
+      flex-wrap nowrap
+      flex 0 0 50%
+      // height 100%
+      // max-height none
+    
     li
-      flex 0 1 10%
-
-
+      // flex 0 1 10%
+      display block
+      // height 100%
 
   nav.content
     padding 0 15%
+
+  .hamburger
+    display none
+
+
 
 
