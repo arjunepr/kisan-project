@@ -1,6 +1,6 @@
 ##Kisan Project
 
-Project tested in node 7.10.0 and 8.2.1
+Project build-step tested in node 7.10.0 and 8.2.1
 
 ### Instructions
 
@@ -41,9 +41,8 @@ Project tested in node 7.10.0 and 8.2.1
   yarn run build
 ```
 
-Note that the development version needs the files to be hosted on a server with the 'images' files in the root directory. This is a consequence of a certain technicality in stylus-loader. Being pressed on time, I decided not to delve too deep into a workaround. 
 
-For your convenience however, I've set up a [live version](https://arjunepr.github.io/kisan-project) 
+For your convenience I've set up a [live version](https://arjunepr.github.io/kisan-project) 
 
 
 ### NOTE
