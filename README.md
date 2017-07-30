@@ -1,3 +1,53 @@
+##Kisan Project
+
+Project tested in node 7.10.0 and 8.2.1
+
+### Instructions
+
+1. Clone the repo. Make sure it's the master branch.
+
+2. Install dependencies with either 
+```
+  yarn install
+```
+
+  or
+
+```
+  npm install
+```
+
+3. Run the development version through 
+
+```
+  npm start
+```
+
+  or
+
+```
+  yarn start
+```
+
+4. To build for production, just use the build command in the package.json file
+
+```
+  npm run build
+```
+
+  or
+
+```
+  yarn run build
+```
+
+Note that the development version needs the files to be hosted on a server with the 'images' files in the root directory. This is a consequence of a certain technicality in stylus-loader. Being pressed on time, I decided not to delve too deep into a workaround. 
+
+For your convenience however, I've set up a [live version](https://arjunepr.github.io/kisan-project) 
+
+
+### NOTE
+
 A copy of this project can be found in [this](https://github.com/arjunepr/kisan-project) repo.
 
 You can access a live version of this project [here](https://arjunepr.github.io/kisan-project)
