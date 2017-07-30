@@ -36,25 +36,29 @@ orangeHero = #eab158
 
   a
     display block
-    color white
+    color #999
     height 100%
     letter-spacing 2px
     font-size 0.8rem
     display flex
     flex-direction column
     justify-content center
+    transition all 0.5s ease
 
 
     &.active, &:hover
       background-color darken(navColor, 20%)
+      color #fff
       border-bottom 2px solid aqua
 
 // For the brand logo
 .brand
-  color black
+  font-weight bold
+  color navColor
+  letter-spacing 1px
   
-  text-stroke 1.8px aqua
-  -webkit-text-stroke 1.8px aqua
+  text-stroke 2.4px aqua
+  -webkit-text-stroke 2.4px aqua
   padding auto 0
   
   display block
