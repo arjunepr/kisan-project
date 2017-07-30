@@ -4,7 +4,14 @@
 import 'reset-css';
 import './styl/style';
 
+import { env } from 'process';
 
+// Note that this is to disable console warnings in production.
+// Also, there's an ongoing issue with the google maps api that throws warnings in the browser console.
+
+if(env.NODE_ENV === 'PRODUCTION'){
+  console.log = () => {};
+}
 
 
 
